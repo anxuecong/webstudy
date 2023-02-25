@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* function connect({host, port, ...user}){
+            console.log(host);
+            console.log(port);
+            console.log(user);
+        }
+        connect({
+            host: '127.0.0.1',
+            port: 3306,
+            username: 'root',
+            password: 'root',
+            type: 'master'
+        }); */
+
+        const skillOne = {
+            q: '钟离'
+        }
+        const skillTwo = {
+            w: '温迪'
+        }
+        const skillThree = {
+            e: '雷电将军'
+        }
+        const skillFour = {
+            r: '纳西妲'
+        }
+        
+        const gods = {...skillOne, ...skillTwo, ...skillThree, ...skillFour};
+        console.log(gods);
+    </script>
+</body>
+</html>

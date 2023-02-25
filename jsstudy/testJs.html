@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // alert("123")
+      /*   var obj = new Object();
+        obj.name = "孙悟空";
+        // console.log(obj.name)
+        function fun(a){
+            console.log(a)
+        }
+        // fun("你好")
+        class Car{
+            constructor(name, year){
+                this.name = name;
+                this.year = year;
+            }
+        }
+        let car = new Car("奔驰", 1998);
+        car = new Car(3,3)
+
+        function fun1(){
+            var a = "123";
+        }
+        console.log(a) */
+
+        var arr = ["孙悟空","猪八戒","沙和尚"];
+        /* for (var index = 0; index < arr.length; index++) {
+            console.log(arr[index]);
+            
+        } */
+        /* for(a in arr){
+            console.log(a);
+        } */
+        /* arr.forEach(function(a){
+            console.log(a);
+        });
+        
+        window.onload = function(){
+        /**
+         * 页面加载完成之后执行
+         */
+        /* } */ 
+
+        /* function* gen(){
+            console.log(111);
+            yield '一只没有耳朵';
+            console.log(222);
+            yield '一只没有尾巴';
+            console.log(333);
+            yield '真奇怪';
+            console.log(444);
+        }
+        let iterator = gen();
+        for(let v of gen()){
+            console.log(v);
+        } */
+/*         function* gen(arg){
+            console.log(arg);
+            let one = yield 111;
+            console.log(one);
+            let two = yield 222;
+            console.log(two);
+            yield 333;
+        }
+        //执行获取迭代器对象
+        let iterator = gen('AAA');
+        console.log(iterator.next());
+        console.log(iterator.next('BBB'));
+        console.log(iterator.next('CCC')); */
+
+        //回调地狱
+        /* setTimeout(() => {
+            console.log(111);
+            setTimeout(() => {
+                console.log(222);
+                    setTimeout(() => {
+                        console.log(333);
+                    }, 1000);
+            }, 1000);
+        }, 1000); */
+
+        /* function one(){
+            setTimeout(() => {
+                console.log(111);
+                iterator.next();
+            }, 1000);
+        }
+        function two(){
+            setTimeout(() => {
+                console.log(222);
+                iterator.next();
+            }, 1000);
+        }
+        function three(){
+            setTimeout(() => {
+                console.log(333);
+                iterator.next();
+            }, 1000);
+        }
+        function* gen(){
+            yield one();
+            yield two();
+            yield three();
+        }
+        let iterator = gen();
+        iterator.next(); */
+
+        /* function getUsers(){
+            setTimeout(() => {
+                let data = '用户数据';
+                iterator.next(data);
+            }, 1000);
+        }
+        function getOrders(){
+            setTimeout(() => {
+                let data = '订单数据';
+                iterator.next(data);
+            }, 1000);
+        }
+        function getGoods(){
+            setTimeout(() => {
+                let data = '商品数据';
+                iterator.next(data);
+            }, 1000);
+        }
+        function * gen(){
+            let users = yield getUsers();
+            console.log(users);
+            let orders = yield getOrders();
+            console.log(orders);
+            let goods = yield getGoods();
+            console.log(goods);
+        }
+        let iterator = gen();
+        iterator.next(); */
+
+        //实例化Promise对象
+/*         const p = new Promise(function(resolve, reject){
+            setTimeout(() => {
+                // let data = '数据库中的用户数据';
+                // resolve(data);  //p变成功
+                let err = '数据读取失败';
+                reject(err);
+            }, 1000);
+        });
+
+        p.then(function(value){
+            console.log(value);
+        },function(reason){
+            console.log(reason);
+        }); */
+
+        /* const p = new Promise((resolve, reject) => {
+            // 1.创建对象
+            const xhr = new XMLHttpRequest();
+            // 2.初始化
+            xhr.open("GET", "https://api.apiopen.top/api/getTime");
+            // 3.发送
+            xhr.send();
+            // 4.绑定时间，处理响应结果
+            xhr.onreadystatechange = function(){
+                //判断
+                if(xhr.readyState === 4){
+                    //判断响应状态码 200-299
+                    if(xhr.status >= 200 && xhr.status < 300){
+                        //表示成功
+                        resolve(xhr.response);
+                    }else{
+                        //如果失败
+                        reject(xhr.status);
+                    }
+                }
+            }
+        });
+        p.then(function(value){
+            console.log(value);
+        },function(reason){
+            console.error(reason);
+        }) */
+
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('用户数据');
+                // reject('出错啦');
+            }, 1000);
+        });
+
+        //then方法的返回结果是Promise对象，对象状态由回调函数的执行结果决定
+        //1. 如果回调函数中返回结果是 非Promise 类型的属性， 状态为成功，返回值为对象的成功值。
+        const result = p.then(value => {
+            // console.log(value);
+            return value;
+        }, reason => {
+            console.warn(reason);
+            return reason;
+        })
+        //链式调用
+        p.then(value => p)
+        .then(value => {
+            console.log(value);
+        });
+    </script>
+</head>
+<body>
+    <h2>我的第一段 JavaScript</h2>
+    <button type="button"
+    onclick="document.getElementById('demo').innerHTML = Date()"
+    >
+    点击这里来显示日期和时间
+    </button>
+    <p id="demo"></p>
+</body>
+</html>

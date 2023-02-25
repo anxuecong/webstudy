@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m = new Map();
+        m.set('name', '鸡哥');
+        m.set('favorite', function(){
+            console.log("我喜欢CTRL");
+        });
+        let key = {
+            team: '美国校队'
+        };
+        m.set(key,['队长','队员','观众']);
+        console.log(m.size);
+        //删除
+        m.delete('name');
+        //获取
+        console.log(m.get('favorite'));
+        //清空
+        // m.clear();
+        //遍历
+        for(let v of m){
+            console.log(v);
+        }
+        console.log(m);
+    </script>
+</body>
+</html>

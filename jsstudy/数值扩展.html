@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* function equal(a, b){
+            if(Math.abs(a-b) < Number.EPSILON){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        console.log(0.1 + 0.2 === 0.3);
+        console.log(equal(0.1 + 0.2, 0.3)); */
+
+        //进制
+        /* let b = 0b1010;	//二进制 10
+        let o = 0o777;	//八进制 511
+        let x = 0xff;   //十六进制 255
+
+        console.log(x); */
+
+        //检测一个数是否为有限数
+        console.log(Number.isFinite(100));
+        console.log(Number.isFinite(100/0));
+        console.log(Number.isFinite(Infinity));
+
+        //isNaN
+        console.log(Number.isNaN(123));
+
+        //字符串转数 Number.parseInt Number.parseFloat
+        console.log(Number.parseInt('234432love'));
+
+        //判断一个数是否为整数 Number.isInteger
+        console.log(Number.isInteger(5));
+
+        //将数字的小数部分抹掉 Math.trunc
+        console.log(Math.trunc(3.5));
+
+        //判断一个数是整数 复数 还是零
+        console.log(Math.sign(100));
+    </script>
+</body>
+</html>

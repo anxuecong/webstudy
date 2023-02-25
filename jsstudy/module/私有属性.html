@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* class Person{
+            //公有属性
+            name;
+            //私有属性
+            #age;
+            #weight;
+            //构造方法
+            constructor(name, age, weignt){
+                this.name = name;
+                this.#age = age;
+                this.#weight = weignt;
+            }
+        }
+
+        //实例化
+        const girl = new Person('小红', 18, '45kg');
+        console.log(girl);
+        console.log(girl.age); */
+
+        //声明两个promise对象
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品数据 - 1');
+            }, 1000);
+        });
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('商品数据 - 2');
+            }, 1000);
+        });
+
+        //结果永远成功
+        const result = Promise.allSettled([p1, p2]);
+        //都成功才会成功
+        const res = Promise.all([p1, p2]);
+        console.log(result);
+    </script>
+</body>
+</html>
